@@ -24,7 +24,7 @@ public class StarProxy implements MethodInterceptor {
     @Override
     public Object intercept(Object object, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
         System.out.println("前增强");
-        Object invoke = methodProxy.invoke(object, args);
+        Object invoke = methodProxy.invoke(target, args);
         System.out.println("后增强");
         return invoke;
     }
